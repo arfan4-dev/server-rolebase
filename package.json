@@ -6,10 +6,17 @@
   "scripts": {
     "dev": "nodemon server.js",
     "start": "node server.js",
-    "prepare": "husky"
+    "prepare": "husky",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix"
   },
   "author": "arshan-01",
   "license": "ISC",
+  "lint-staged": {
+    "*.js": [
+      "npm run lint:fix"
+    ]
+  },
   "description": "",
   "dependencies": {
     "body-parser": "^1.20.2",
@@ -30,7 +37,9 @@
   "devDependencies": {
     "@commitlint/cli": "^19.4.0",
     "@commitlint/config-conventional": "^19.2.2",
+    "@eslint/js": "^9.9.1",
     "eslint": "^9.9.1",
+    "globals": "^15.9.0",
     "prettier": "^3.3.3"
   }
 }

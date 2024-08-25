@@ -1,19 +1,26 @@
-// eslint.config.mjs
+// import globals from "globals";
+// import pluginJs from "@eslint/js";
 
-import eslint from '@eslint/js';
 
-export default eslint.config({
-    languageOptions: {
-        parserOptions: {
-            project: true,
-            tsconfigRootDir: import.meta.dirname
-        }
+// export default [
+//   {languageOptions: { globals: globals.browser }},
+//   pluginJs.configs.recommended,
+// ];
+
+
+import globals from "globals";
+import pluginJs from "@eslint/js";
+
+export default [
+    {
+        languageOptions: {
+            globals: globals.browser,  // Use browser globals
+        },
+        files: ["**/*.js"],  // Apply to all JS files
+        rules: {
+            "no-console": "error",  // Disallow console.log
+            "quotes": ["error", "double", { allowTemplateLiterals: true }],  // Enforce single quotes
+        },
     },
-    files: ['**/*.js'],
-    extends: [eslint.configs.recommended],
-    rules: {
-        'no-console': 'error',
-        'no-useless-catch': 0,
-        quotes: ['error', 'single', { allowTemplateLiterals: true }]
-    }
-});
+    pluginJs.configs.recommended,  // Include recommended JS rules
+];
