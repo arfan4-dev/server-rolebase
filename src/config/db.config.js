@@ -8,7 +8,7 @@ const connectDB = async () => {
     return (`\n MongoDB connected !! DB HOST: ${connectionInstance.connection.host}`)
   } catch (error) {
     ('MONGODB connection FAILED ', error)
-    // eslint-disable-next-line no-undef
+     
     process.exit(1)
   }
 }
