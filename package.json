@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "nodemon server.js",
-    "start": "node server.js"
+    "start": "node server.js",
+    "prepare": "husky"
   },
   "author": "arshan-01",
   "license": "ISC",
@@ -17,7 +18,9 @@
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "helmet": "^7.1.0",
+    "husky": "^9.1.5",
     "jsonwebtoken": "^9.0.2",
+    "lint-staged": "^15.2.9",
     "mongoose": "^8.5.2",
     "morgan": "^1.10.0",
     "nodemon": "^3.1.4",
@@ -25,6 +28,9 @@
     "swagger-ui-express": "^5.0.1"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.4.0",
+    "@commitlint/config-conventional": "^19.2.2",
+    "eslint": "^9.9.1",
     "prettier": "^3.3.3"
   }
 }
