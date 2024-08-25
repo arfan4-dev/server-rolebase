@@ -6,7 +6,8 @@ export default [
 
     {
         rules: {
-
+            "no-console": "error",
+            quotes: ["error", "single", { allowTemplateLiterals: true }]
         }
     }
 ];
